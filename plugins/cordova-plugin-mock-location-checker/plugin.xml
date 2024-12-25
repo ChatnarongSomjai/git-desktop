@@ -1,0 +1,20 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-mock-location-checker"
+    version="1.0.0">
+    <name>MockLocationChecker</name>
+    <description>Plugin to check if the location is mocked</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, mock location, android</keywords>
+    <engines>
+        <engine name="cordova-android" version=">=10.0.0" />
+    </engines>
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+        </config-file>
+        <source-file src="src/android/MockLocationChecker.java" target-dir="src/com/example/plugins/" />
+    </platform>
+    <js-module name="MockLocationChecker" src="www/MockLocationChecker.js">
+        <clobbers target="cordova.plugins.mockLocationChecker" />
+    </js-module>
+</plugin>

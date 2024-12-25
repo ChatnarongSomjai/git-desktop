@@ -15,7 +15,8 @@
   "devDependencies": {
     "cordova-android": "^13.0.0",
     "cordova-plugin-android-permissions": "^1.1.5",
-    "cordova-plugin-geolocation": "^5.0.0"
+    "cordova-plugin-geolocation": "^5.0.0",
+    "cordova-plugin-mock-location-checker": "file:../plugins/cordova-plugin-mock-location-checker"
   },
   "cordova": {
     "platforms": [
@@ -25,7 +26,8 @@
       "cordova-plugin-android-permissions": {},
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
-      }
+      },
+      "cordova-plugin-mock-location-checker": {}
     }
   }
 }
