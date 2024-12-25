@@ -91,3 +91,20 @@ mockLocationBtn.addEventListener('click', () => {
         }
     );
 });
+
+
+document.addEventListener('pause', function () {
+    console.log("App paused, releasing resources...");
+    // ปล่อยทรัพยากรที่ไม่จำเป็น
+    if (window.cordova && cordova.plugins && cordova.plugins.WebView) {
+        cordova.plugins.WebView.pause();
+    }
+});
+
+document.addEventListener('resume', function () {
+    console.log("App resumed, restoring resources...");
+    // คืนค่าทรัพยากรที่จำเป็น
+    if (window.cordova && cordova.plugins && cordova.plugins.WebView) {
+        cordova.plugins.WebView.resume();
+    }
+});

@@ -16,6 +16,9 @@
     },
     "cordova-plugin-mock-location-checker": {
       "PACKAGE_NAME": "com.example.checkmocklocation"
+    },
+    "com.tanyakron.cordovadetectmocklocation": {
+      "PACKAGE_NAME": "com.example.checkmocklocation"
     }
   },
   "dependent_plugins": {}

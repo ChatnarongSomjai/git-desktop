@@ -29,11 +29,20 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "clobbers": [
         "cordova.plugins.mockLocationChecker"
       ]
+    },
+    {
+      "id": "com.tanyakron.cordovadetectmocklocation.CordovaDetectMockLocationPlugin",
+      "file": "plugins/com.tanyakron.cordovadetectmocklocation/www/CordovaDetectMockLocationPlugin.js",
+      "pluginId": "com.tanyakron.cordovadetectmocklocation",
+      "clobbers": [
+        "cordova.plugins.CordovaDetectMockLocationPlugin"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-android-permissions": "1.1.5",
     "cordova-plugin-geolocation": "5.0.0",
-    "cordova-plugin-mock-location-checker": "1.0.0"
+    "cordova-plugin-mock-location-checker": "1.0.0",
+    "com.tanyakron.cordovadetectmocklocation": "0.0.1"
   };
 });

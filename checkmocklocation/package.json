@@ -14,6 +14,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "cordova-android": "^13.0.0",
+    "cordova-mock-location-detector-plugin": "^0.0.9",
     "cordova-plugin-android-permissions": "^1.1.5",
     "cordova-plugin-geolocation": "^5.0.0",
     "cordova-plugin-mock-location-checker": "file:../plugins/cordova-plugin-mock-location-checker"
@@ -27,8 +28,8 @@
       "cordova-plugin-geolocation": {
         "GPS_REQUIRED": "true"
       },
-      "cordova-plugin-mock-location-checker": {}
+      "cordova-plugin-mock-location-checker": {},
+      "com.tanyakron.cordovadetectmocklocation": {}
     }
   }
-
 }

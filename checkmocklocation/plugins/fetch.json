@@ -22,5 +22,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "com.tanyakron.cordovadetectmocklocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-mock-location-detector-plugin"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

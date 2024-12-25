@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "cordova-mock-location-detector-plugin": "^0.0.9"
+  }
+}

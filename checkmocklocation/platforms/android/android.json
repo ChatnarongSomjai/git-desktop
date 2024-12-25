@@ -15,6 +15,10 @@
             {
               "xml": "<feature name=\"Geolocation\"><param name=\"android-package\" value=\"org.apache.cordova.geolocation.Geolocation\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"CordovaDetectMockLocationPlugin\"><param name=\"android-package\" value=\"com.tanyakron.cordovadetectmocklocation.CordovaDetectMockLocationPlugin\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -49,6 +53,9 @@
     },
     "cordova-plugin-mock-location-checker": {
       "PACKAGE_NAME": "com.example.checkmocklocation"
+    },
+    "com.tanyakron.cordovadetectmocklocation": {
+      "PACKAGE_NAME": "com.example.checkmocklocation"
     }
   },
   "dependent_plugins": {},
@@ -82,11 +89,20 @@
       "clobbers": [
         "cordova.plugins.mockLocationChecker"
       ]
+    },
+    {
+      "id": "com.tanyakron.cordovadetectmocklocation.CordovaDetectMockLocationPlugin",
+      "file": "plugins/com.tanyakron.cordovadetectmocklocation/www/CordovaDetectMockLocationPlugin.js",
+      "pluginId": "com.tanyakron.cordovadetectmocklocation",
+      "clobbers": [
+        "cordova.plugins.CordovaDetectMockLocationPlugin"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-android-permissions": "1.1.5",
     "cordova-plugin-geolocation": "5.0.0",
-    "cordova-plugin-mock-location-checker": "1.0.0"
+    "cordova-plugin-mock-location-checker": "1.0.0",
+    "com.tanyakron.cordovadetectmocklocation": "0.0.1"
   }
 }
