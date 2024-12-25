@@ -1,0 +1,26 @@
+{
+  "cordova-plugin-android-permissions": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-android-permissions"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@5.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-mock-location-checker": {
+    "source": {
+      "type": "local",
+      "path": "C:\\git-desktop\\checkmocklocation\\node_modules\\cordova-plugin-mock-location-checker"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

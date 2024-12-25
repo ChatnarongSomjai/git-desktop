@@ -1,0 +1,9 @@
+{
+  "name": "cordova-plugin-mock-location-checker",
+  "version": "1.0.0",
+  "description": "Cordova plugin to detect mock locations on Android",
+  "main": "www/MockLocationChecker.js",
+  "keywords": ["cordova", "android", "mock-location"],
+  "author": "JET",
+  "license": "Apache-2.0"
+}

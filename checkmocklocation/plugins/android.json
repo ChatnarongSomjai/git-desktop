@@ -1,0 +1,22 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.example.checkmocklocation"
+    },
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "com.example.checkmocklocation"
+    },
+    "cordova-plugin-mock-location-checker": {
+      "PACKAGE_NAME": "com.example.checkmocklocation"
+    }
+  },
+  "dependent_plugins": {}
+}
