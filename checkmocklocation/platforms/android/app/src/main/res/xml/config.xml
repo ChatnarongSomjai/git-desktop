@@ -6,6 +6,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="CordovaDetectMockLocationPlugin">
+        <param name="android-package" value="com.tanyakron.cordovadetectmocklocation.CordovaDetectMockLocationPlugin" />
+    </feature>
     <name>CheckMockLocation</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -15,7 +18,4 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <preference name="loglevel" value="DEBUG" />
-    <feature name="CordovaDetectMockLocationPlugin">
-        <param name="android-package" value="com.tanyakron.cordovadetectmocklocation.CordovaDetectMockLocationPlugin" />
-    </feature>
 </widget>

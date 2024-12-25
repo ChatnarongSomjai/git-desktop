@@ -12,7 +12,7 @@
 <body>
 <div class="container">
     <header class="header">
-        <h1>CheckMockLocation</h1>
+        <h1>CheckMock</h1>
     </header>
     <main class="main-content">
         <section id="plugin-status-section" class="card status-checking">
@@ -29,5 +29,29 @@
         <p>Powered by Cordova</p>
     </footer>
 </div>
+
+<script>
+    // Attach event listener to the button
+    document.getElementById('check-mock-location-btn').addEventListener('click', function () {
+        if (cordova && cordova.plugins && cordova.plugins.CordovaDetectMockLocationPlugin) {
+            cordova.plugins.CordovaDetectMockLocationPlugin.detectMockLocation(
+                function (result) {
+                    const isMock = result.isMockLocation;
+                    if (isMock) {
+                        alert('Mock location detected!');
+                    } else {
+                        alert('Genuine location detected.');
+                    }
+                },
+                function (error) {
+                    console.error('Error detecting mock location:', error);
+                    alert('Error: ' + error.message);
+                }
+            );
+        } else {
+            alert('Mock location plugin is not available.');
+        }
+    });
+</script>
 </body>
 </html>
