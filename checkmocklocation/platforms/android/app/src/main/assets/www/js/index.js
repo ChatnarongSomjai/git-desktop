@@ -1,8 +1,8 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-    console.log('Device is ready');
-    updatePluginStatus('Checking plugin status...', 'checking');
+    console.log('อุปกรณ์พร้อมใช้งาน');
+    updatePluginStatus('กำลังตรวจสอบสถานะปลั๊กอิน...', 'checking');
     checkPluginStatus(); // ตรวจสอบสถานะของปลั๊กอิน
     requestLocationPermission();
     startWatchingLocation(); // เริ่มติดตามตำแหน่ง
@@ -13,35 +13,35 @@ async function requestLocationPermission() {
         const permission = cordova.plugins.permissions;
         permission.requestPermission(permission.ACCESS_FINE_LOCATION, function (status) {
             if (status.hasPermission) {
-                console.log('Location permission granted');
-                updatePluginStatus('Location permission granted', 'success');
+                console.log('ได้รับสิทธิ์การเข้าถึงตำแหน่งแล้ว');
+                updatePluginStatus('ได้รับสิทธิ์การเข้าถึงตำแหน่งแล้ว', 'success');
             } else {
-                console.error('Location permission denied');
-                updatePluginStatus('Location permission denied', 'error');
+                console.error('ไม่ได้รับสิทธิ์การเข้าถึงตำแหน่ง');
+                updatePluginStatus('ไม่ได้รับสิทธิ์การเข้าถึงตำแหน่ง', 'error');
             }
         }, function (error) {
-            console.error('Permission request failed:', error);
-            updatePluginStatus('Permission request failed', 'error');
+            console.error('คำขอสิทธิ์ล้มเหลว:', error);
+            updatePluginStatus('คำขอสิทธิ์ล้มเหลว', 'error');
         });
     } catch (error) {
-        console.error('Error requesting permission:', error);
-        updatePluginStatus('Error requesting permission', 'error');
+        console.error('เกิดข้อผิดพลาดในการขอสิทธิ์:', error);
+        updatePluginStatus('เกิดข้อผิดพลาดในการขอสิทธิ์', 'error');
     }
 }
 
 function checkPluginStatus() {
     if (cordova.plugins && cordova.plugins.CordovaDetectMockLocationPlugin) {
-        console.log("MockLocationChecker plugin is loaded.");
-        updatePluginStatus('Plugin is loaded and ready to use.', 'success');
+        console.log("ปลั๊กอิน MockLocationChecker ถูกโหลดแล้ว");
+        updatePluginStatus('ปลั๊กอินพร้อมใช้งาน', 'success');
     } else {
-        console.error("MockLocationChecker plugin is not available.");
-        updatePluginStatus('Plugin is not available.', 'error');
+        console.error("ไม่พบปลั๊กอิน MockLocationChecker");
+        updatePluginStatus('ไม่พบปลั๊กอิน', 'error');
     }
 }
 
 function startWatchingLocation() {
     try {
-        updatePluginStatus('Getting location...', 'checking');
+        updatePluginStatus('กำลังตรวจสอบตำแหน่ง...', 'checking');
 
         navigator.geolocation.watchPosition(
             function (position) {
@@ -49,26 +49,26 @@ function startWatchingLocation() {
 
                 // สร้างข้อความเพื่อแสดงตำแหน่ง
                 const locationInfo = `
-                    Latitude: ${latitude.toFixed(6)}<br>
-                    Longitude: ${longitude.toFixed(6)}<br>
-                    Accuracy: ${accuracy} meters<br>
-                    Altitude: ${altitude || 'N/A'} meters<br>
-                    Heading: ${heading || 'N/A'}°<br>
-                    Speed: ${speed || 'N/A'} m/s
+                    ละติจูด: ${latitude.toFixed(6)}<br>
+                    ลองจิจูด: ${longitude.toFixed(6)}<br>
+                    ความแม่นยำ: ${accuracy} เมตร<br>
+                    ความสูง: ${altitude || 'ไม่มีข้อมูล'} เมตร<br>
+                    ทิศทาง: ${heading || 'ไม่มีข้อมูล'}°<br>
+                    ความเร็ว: ${speed || 'ไม่มีข้อมูล'} เมตร/วินาที
                 `;
 
                 // อัปเดต UI ด้วยข้อมูลตำแหน่ง
                 updateLocationStatus(locationInfo, 'success');
             },
             function (error) {
-                console.error('Error getting location:', error);
-                updateLocationStatus(`Error: ${error.message}`, 'error');
+                console.error('เกิดข้อผิดพลาดในการรับตำแหน่ง:', error);
+                updateLocationStatus(`ข้อผิดพลาด: ${error.message}`, 'error');
             },
             { enableHighAccuracy: true, maximumAge: 0 }
         );
     } catch (error) {
-        console.error('Error starting location watch:', error);
-        updateLocationStatus('Error starting location watch', 'error');
+        console.error('เกิดข้อผิดพลาดในการเริ่มการติดตามตำแหน่ง:', error);
+        updateLocationStatus('เกิดข้อผิดพลาดในการเริ่มการติดตามตำแหน่ง', 'error');
     }
 }
 
@@ -90,3 +90,30 @@ function updateLocationStatus(status, type) {
     sectionElement.classList.remove('status-checking', 'status-success', 'status-error');
     sectionElement.classList.add(`status-${type}`);
 }
+
+// เพิ่มการตรวจจับ Mock Location
+function detectMockLocation() {
+    try {
+        cordova.plugins.CordovaDetectMockLocationPlugin.detectMockLocation(
+            function (result) {
+                const isMock = result.isMockLocation;
+                if (isMock) {
+                    if (confirm('ตรวจพบตำแหน่งจำลอง! ต้องการปิดแอปหรือไม่?')) {
+                        navigator.app.exitApp();
+                    }
+                } else {
+                    alert('ตำแหน่งที่ตรวจพบเป็นของจริง');
+                }
+            },
+            function (error) {
+                console.error('เกิดข้อผิดพลาดในการตรวจจับตำแหน่งจำลอง:', error);
+                alert('ข้อผิดพลาด: ' + error.message);
+            }
+        );
+    } catch (error) {
+        console.error('เกิดข้อผิดพลาดในการตรวจจับตำแหน่งจำลอง:', error);
+    }
+}
+
+// ผูกฟังก์ชันกับปุ่มตรวจสอบ
+document.getElementById('check-mock-location-btn').addEventListener('click', detectMockLocation);
