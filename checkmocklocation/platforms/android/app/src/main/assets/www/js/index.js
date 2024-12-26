@@ -98,9 +98,8 @@ function detectMockLocation() {
             function (result) {
                 const isMock = result.isMockLocation;
                 if (isMock) {
-                    if (alert('ตรวจพบตำแหน่งจำลอง! ระบบจะปิดตัวลง!')) {
-                        navigator.app.exitApp();
-                    }
+                    alert('ตรวจพบตำแหน่งจำลอง! ระบบจะปิดตัวลง!');
+                    navigator.app.exitApp(); // ปิดแอปทันทีหลังจากผู้ใช้กด OK
                 } else {
                     alert('ตำแหน่งที่ตรวจพบเป็นของจริง');
                 }
@@ -114,6 +113,8 @@ function detectMockLocation() {
         console.error('เกิดข้อผิดพลาดในการตรวจจับตำแหน่งจำลอง:', error);
     }
 }
+
+
 
 // ผูกฟังก์ชันกับปุ่มตรวจสอบ
 document.getElementById('check-mock-location-btn').addEventListener('click', detectMockLocation);

@@ -2,31 +2,33 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ตรวจสอบตำแหน่งจำลอง</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Mock</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="cordova.js"></script>
-    <script src="js/index.js" defer></script>
 </head>
 <body>
+<header>
+    <h1 class="neon-header">ตรวจสอบตำแหน่งจำลอง</h1>
+</header>
+
 <div class="container">
-    <header class="header">
-        <h1>ตรวจสอบตำแหน่งจำลอง</h1>
-    </header>
-    <main class="main-content">
-        <section id="plugin-status-section" class="card status-checking">
-            <h2>สถานะปลั๊กอิน</h2>
-            <p id="plugin-status">กำลังตรวจสอบสถานะปลั๊กอิน...</p>
-        </section>
-        <section id="location-section" class="card status-checking">
-            <h2>ข้อมูลตำแหน่ง</h2>
-            <p id="location">กำลังรอตำแหน่ง...</p>
-        </section>
-    </main>
-    <footer class="footer">
-        <button id="check-mock-location-btn" class="btn">ตรวจสอบตำแหน่งจำลอง</button>
-    </footer>
+    <section id="plugin-status-section" class="card">
+        <h2>สถานะปลั๊กอิน</h2>
+        <p id="plugin-status">กำลังตรวจสอบสถานะปลั๊กอิน...</p>
+    </section>
+
+    <section id="location-section" class="card">
+        <h2>ข้อมูลตำแหน่ง</h2>
+        <p id="location">กำลังรอตำแหน่ง...</p>
+    </section>
 </div>
+
+<footer>
+    <button id="check-mock-location-btn" class="btn">ตรวจสอบตำแหน่งจำลอง</button>
+</footer>
+
+<script src="cordova.js"></script>
+<script src="js/index.js" defer></script>
 </body>
 </html>

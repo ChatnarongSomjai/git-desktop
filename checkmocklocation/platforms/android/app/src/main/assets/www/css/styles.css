@@ -1,110 +1,142 @@
-/* Common styles from before */
+/* Modern and Luxurious Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    color: #fff;
+    background: radial-gradient(circle, #1a1a1a, #000000);
+    color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
 }
 
 .container {
+    max-width: 800px;
     width: 90%;
-    max-width: 600px;
-    margin: auto;
-    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
 }
 
 .header {
+    text-align: center;
     margin-bottom: 20px;
-    word-wrap: break-word; /* ตัดคำเมื่อข้อความยาวเกินกรอบ */
-    overflow-wrap: break-word; /* รองรับเบราว์เซอร์เพิ่มเติม */
-    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-    padding: 0 10px; /* เพิ่มระยะขอบภายใน */
+    position: relative;
 }
 
 .header h1 {
     font-size: 2.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    word-wrap: break-word; /* ตัดคำใน h1 */
-    overflow-wrap: break-word;
+    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
 }
 
-
-.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.header .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
 }
 
 .card {
+    margin-bottom: 20px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
 }
 
 .card h2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #ffd700;
     margin-bottom: 10px;
 }
 
 .card p {
     font-size: 1rem;
-    font-weight: 400;
+    line-height: 1.6;
 }
 
-/* Status Colors */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+}
+
+/* Status Styles */
 .status-checking {
-    background-color: #ffa500; /* Orange */
+    background-color: #ff4500;
+    border: 2px solid #ff6347;
 }
 
 .status-success {
-    background-color: #4caf50; /* Green */
+    background-color: #4caf50;
+    border: 2px solid #66bb6a;
+    color: #ffffff;
 }
 
 .status-error {
-    background-color: #f44336; /* Red */
+    background-color: #b22222;
+    border: 2px solid #ff4500;
+    color: #ffffff;
 }
-/* ปุ่ม */
+
+/* Buttons */
 .btn {
-    background-color: #0072ff; /* สีพื้นหลัง */
-    color: #ffffff; /* สีข้อความ */
-    font-size: 1rem; /* ขนาดข้อความ */
-    font-weight: 500; /* น้ำหนักข้อความ */
-    border: none; /* ไม่มีเส้นขอบ */
-    border-radius: 25px; /* มุมโค้งมน */
-    padding: 10px 20px; /* ระยะห่างภายใน */
-    cursor: pointer; /* เปลี่ยนเคอร์เซอร์เมื่อชี้ */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* เงา */
+    display: inline-block;
+    background: linear-gradient(145deg, #ff0000, #ffd700);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out, transform 0.2s ease-in-out;
+    animation: glow 1.5s infinite alternate;
 }
 
 .btn:hover {
-    background-color: #0056cc; /* สีเมื่อวางเมาส์ */
-    transform: translateY(-2px); /* ขยับขึ้น */
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.7);
 }
 
 .btn:active {
-    background-color: #003f99; /* สีเมื่อคลิก */
-    transform: translateY(0); /* กลับมาตำแหน่งเดิม */
+    transform: translateY(0) scale(1);
+    background: linear-gradient(135deg, #cc0000, #bfa700);
 }
 
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+}
 
 /* Footer */
 .footer {
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 20px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
 }
+
 #location {
-    white-space: pre-line; /* รักษาช่องว่างและการขึ้นบรรทัดใหม่ */
-    text-align: left; /* จัดข้อความชิดขวา */
-    padding-right: 10px; /* เพิ่มระยะห่างจากขอบขวา */
+    white-space: pre-line;
+    text-align: left;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    font-size: 1rem;
 }
