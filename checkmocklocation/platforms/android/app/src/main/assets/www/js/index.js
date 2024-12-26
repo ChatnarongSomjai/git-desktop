@@ -98,7 +98,7 @@ function detectMockLocation() {
             function (result) {
                 const isMock = result.isMockLocation;
                 if (isMock) {
-                    if (confirm('ตรวจพบตำแหน่งจำลอง! ต้องการปิดแอปหรือไม่?')) {
+                    if (alert('ตรวจพบตำแหน่งจำลอง! ระบบจะปิดตัวลง!')) {
                         navigator.app.exitApp();
                     }
                 } else {

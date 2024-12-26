@@ -14,9 +14,6 @@
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.example.checkmocklocation"
     },
-    "cordova-plugin-mock-location-checker": {
-      "PACKAGE_NAME": "com.example.checkmocklocation"
-    },
     "com.tanyakron.cordovadetectmocklocation": {
       "PACKAGE_NAME": "com.example.checkmocklocation"
     }

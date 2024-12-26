@@ -15,14 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-mock-location-checker": {
-    "source": {
-      "type": "local",
-      "path": "C:\\git-desktop\\checkmocklocation\\node_modules\\cordova-plugin-mock-location-checker"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "com.tanyakron.cordovadetectmocklocation": {
     "source": {
       "type": "registry",
